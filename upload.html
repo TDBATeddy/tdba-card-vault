@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Upload Card - TDBA Vault</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f4f4f4; }
+    h1 { text-align: center; }
+    form {
+      background: white;
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    label, input, textarea { display: block; width: 100%; margin: 1rem 0; }
+    input[type="submit"] {
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Upload a Basketball Card</h1>
+  <form action="#" method="post" enctype="multipart/form-data">
+    <label>Player Name:</label>
+    <input type="text" name="player_name" required />
+
+    <label>Year:</label>
+    <input type="text" name="year" required />
+
+    <label>Brand:</label>
+    <input type="text" name="brand" required />
+
+    <label>Type (Rookie, Insert, etc.):</label>
+    <input type="text" name="type" required />
+
+    <label>Tier (1–4):</label>
+    <input type="number" name="tier" min="1" max="4" required />
+
+    <label>Estimated Raw Value:</label>
+    <input type="text" name="raw_value" required />
+
+    <label>Estimated PSA 10 Value:</label>
+    <input type="text" name="psa10_value" required />
+
+    <label>Image Upload:</label>
+    <input type="file" name="card_image" accept="image/*" required />
+
+    <input type="submit" value="Submit Card" />
+  </form>
+</body>
+</html>

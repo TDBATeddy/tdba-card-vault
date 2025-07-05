@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TDBA Card Vault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+    header {
+      background-color: #000;
+      padding: 10px;
+      text-align: center;
+    }
+    header img {
+      max-height: 60px;
+    }
+    h1 { text-align: center; margin-top: 1rem; }
+    .vault-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .card {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 220px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 4px;
+    }
+    .card h3 { margin: 0.5rem 0 0.25rem; font-size: 1.1rem; }
+    .card p { margin: 0.25rem 0; font-size: 0.9rem; }
+    .card a { text-decoration: none; color: #0066cc; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://raw.githubusercontent.com/OpenAI/gpt-assets/main/TDBA-Primary-Logo.png" alt="TDBA Logo" />
+  </header>
+  <h1>TDBA Card Vault</h1>
+  <div class="vault-grid" id="vaultGrid"></div>
+
+  <script>
+    fetch('metadata.json')
+      .then(response => response.json())
+      .then(cards => {
+        const grid = document.getElementById('vaultGrid');
+        cards.forEach(card => {
+          const div = document.createElement('div');
+          div.className = 'card';
+          div.innerHTML = `
+            <img src="${card.image_url}" alt="Card image" />
+            <h3>${card.player_name}</h3>
+            <p><strong>Year:</strong> ${card.year}</p>
+            <p><strong>Brand:</strong> ${card.brand}</p>
+            <p><strong>Type:</strong> ${card.type}</p>
+            <p><strong>Tier:</strong> ${card.tier}</p>
+            <p><strong>Raw Value:</strong> ${card.raw_value}</p>
+            <p><strong>PSA 10 Value:</strong> ${card.psa10_value}</p>
+            <p><a href="${card.claim_url}" target="_blank">Claim Card</a></p>
+            <p><a href="${card.qr_code}" target="_blank">QR Code</a></p>
+          `;
+          grid.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>

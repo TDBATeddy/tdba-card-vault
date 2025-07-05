@@ -1,0 +1,28 @@
+[
+  {
+    "player_name": "Victor Wembanyama",
+    "year": "2023",
+    "brand": "Panini Prizm",
+    "type": "Rookie",
+    "tier": "Tier 1",
+    "summary": "Generational rookie and #1 overall pick",
+    "raw_value": "$125",
+    "psa10_value": "$525",
+    "claim_url": "https://vault.teddydupay.com/claim/VictorWembanyama-2023-Tier1",
+    "qr_code": "https://www.the-qrcode-generator.com/",
+    "image_url": "https://example.com/images/wemby.jpg"
+  },
+  {
+    "player_name": "Luka Doncic",
+    "year": "2022",
+    "brand": "Panini Select",
+    "type": "Insert",
+    "tier": "Tier 2",
+    "summary": "NBA superstar and multiple-time All-Star",
+    "raw_value": "$20",
+    "psa10_value": "$95",
+    "claim_url": "https://vault.teddydupay.com/claim/LukaDoncic-2022-Tier2",
+    "qr_code": "https://www.the-qrcode-generator.com/",
+    "image_url": "https://example.com/images/luka.jpg"
+  }
+]
